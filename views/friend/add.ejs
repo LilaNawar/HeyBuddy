@@ -1,0 +1,27 @@
+<h1>Add Friend</h1>
+
+<form method="post" action="/friend/add">
+
+    <div class="form-group">
+        <label>Name of Friend (required)</label>
+        <input name="name" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Notes</label>
+        <textarea name="content" class="form-control "></textarea>
+    </div>
+    <div class="form-group">
+        <label>Birthday (required)</label>
+        <input type="datetime-local" name="birthday" class="form-control"></input>
+    </div>
+    <div class="form-group">
+        <label>Last Contacted (required)</label>
+        <input type="datetime-local" name="lastContacted" class="form-control"></input>
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">Add New Friend</button>
+
+</form>

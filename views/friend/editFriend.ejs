@@ -1,0 +1,54 @@
+<style>
+    body{
+    background-color: rgb(203, 192, 211);
+    padding: 20px;
+    text: black
+}
+.noStyle{
+    text-decoration: none;
+    color: black;
+  }
+  .nav{
+    float: left;
+  }
+  .menuAlignment{
+    text-align: right;
+  }
+  .btn{
+    color: white;
+    background: rgb(53, 80, 112);
+  }
+
+  .btn-outline-primary{
+    outline-color: rgb(53, 80, 112)
+  }
+  .btn-outline-primary:hover{
+    background-color: rgb(181, 101, 118)
+  }
+  .btn:hover{
+    color: black;
+    background: rgb(181, 101, 118)
+  }
+  
+  .input{
+    width:50%;
+    align-items: center;
+  }
+</style>
+
+<h1>Edit Friend</h1>
+<a href="/friend/index" class="btn btn-primary">Back to Friends</a>
+<form method="post">
+    <div class="form-group">
+        <label>Change Name</label>
+        <textarea name="name" class="form-control "></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label>Last Contacted</label>
+        <input type="datetime-local" name="lastContacted" class="form-control"></input>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Friend</button>
+
+</form>

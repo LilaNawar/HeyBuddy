@@ -1,0 +1,24 @@
+
+<nav><a href="/friend/edit/<%=friend._id%>" class="btn btn-primary">EDIT FRIEND</a></nav>
+<h2 style="font-weight: 900;"> <%= friend.name %> </h2>
+
+<table>
+<div>
+    <div>Last Contacted: <%= friend.lastContacted %></div>
+    <div>Birthday: <%= friend.birthday %></siv>
+</div>
+<hr>
+</table>
+<br>
+<div>
+    <div style="font-weight: bold"> NOTES</div>
+    <a href="/friend/note/add/<%=friend._id%>">ADD NOTE</a>
+    <br>
+    <%friend.notes.forEach(function(notes, index){ %>
+        <%=notes%><a href="/friend/<%=friend._id%>/delete/note?note=<%=index%>" >DELETE Note</a>
+        <br>
+    <%})%>
+
+</div>
+
+

@@ -1,0 +1,38 @@
+<table class="table table-striped">
+  <h2>Birthdays This Month</h2>
+    <tr>
+      <th>Name</th>
+      <th>Birthday</th>
+    </tr>
+      <% thisMonth.forEach(function(friend){ %>
+        <tr>
+          <td><a href="/friend/<%=friend._id%>"><%=friend.name%></a></td>
+          <td><%=friend.birthday%></td>
+        </tr>
+      <%})%>
+  </table>
+
+
+
+<h2>Friends</h2>
+<div>
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Last Contacted</th>
+    <th>Delete</th>
+  </tr>
+
+  <% user.friends.forEach(function(friend){ %>
+    <tr>
+      <td><a href="/friend/<%=friend._id%>"><%=friend.name%></a></td>
+      <td><%=friend.lastContacted%></td>
+      <td><a href="/friend/delete/<%=friend._id%>">Delete Friend</a></td>
+    </tr>
+    <%})%>
+</table>
+</div>
+
+
+
+

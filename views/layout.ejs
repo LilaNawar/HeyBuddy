@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeyBuddy</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div>
+      <h1>
+        <%if (currentUser){%>
+          <a href="/friend/index" class="noStyle">HeyBuddy</a>
+        <%}%>
+        <%if(!currentUser){ %>
+          HeyBuddy
+        <%}%>
+      </h1>
+    </div>
+    <hr />
+
+    <% if(alerts.validationErrors) { %> <% alerts.validationErrors.forEach(function(msg) { %>
+      <div class="alert alert-info" style="width:50%">
+        Your  <%= msg.param %> has 
+        <%= msg.msg %>
+      </div>
+      <% }) %> <% } %>
+
+    <% if(alerts.success) { %> <% alerts.success.forEach(function(msg) { %>
+    <div class="alert alert-info" style="width:50%"><%= msg %></div>
+    <% }) %> <% } %>
+    
+    <% if(alerts.error) { %> <%
+    alerts.error.forEach(function(msg) { %>
+    <div class="alert alert-info" style="width:50%"><%= msg %></div>
+    <% }) %> <% } %>
+
+    <nav>
+      <div class="nav">
+        <% if(currentUser) { %>
+        <a href="/friend/add" class="btn btn-outline-primary"> Add Friend</a>
+        <% }%>
+        </div>
+
+      <div class="menuAlignment">
+        <% if(currentUser) { %> Hi <%= currentUser.name%>!!
+        <a href="/auth/logout" class="btn btn-outline-primary">Logout</a>
+
+        <% } else { %>
+
+        <a href="/auth/signin" class="btn btn-outline-primary">Signin</a> &nbsp;
+        <a href="/auth/signup" class="btn btn-outline-primary"
+          >Create new account</a
+        >
+        <% } %>
+      </div>
+    </nav>
+    <hr>
+
+    <%- body %>
+
+
+    <hr />
+    <br />
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
